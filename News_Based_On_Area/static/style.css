@@ -1,0 +1,146 @@
+/* Set Background Image for the Whole Page */
+body {
+    background: url('{{ url_for("static", filename="Newspaper.jpg") }}') no-repeat center center/cover;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container Stays Dark */
+.container-box {
+    background: rgba(20, 20, 20, 0.9); /* Dark background with slight transparency */
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Form Input & Button */
+/* Set Background Image for the Whole Page */
+body {
+    background: url('{{ url_for("static", filename="Newspaper.jpg") }}') no-repeat center center/cover;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container Stays Dark */
+.container-box {
+    background: rgba(20, 20, 20, 0.9); /* Dark background with slight transparency */
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Form Input & Button */
+.form-control {
+    border-radius: 5px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1); /* Light transparent input */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-custom {
+    background: linear-gradient(45deg, #ff6b6b, #f94c66);
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    color: white;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(45deg, #f94c66, #ff6b6b);
+    transform: scale(1.05);
+}
+
+/* News List */
+.news-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.news-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-custom {
+    background: linear-gradient(45deg, #ff6b6b, #f94c66);
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    color: white;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(45deg, #f94c66, #ff6b6b);
+    transform: scale(1.05);
+}
+
+/* News List */
+.news-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.news-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,209 @@
+/* Default light mode styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #ffffff;
+    color: #333;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+    transition: background 0.5s ease-in-out;
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: darkblue;
+    transform: scale(1.05);
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #f8f8f8;
+}
+
+.dark-mode .container {
+    background: #333;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode input, .dark-mode button {
+    background: #444;
+    color: white;
+}
+
+.dark-mode button {
+    background-color: #007bff;
+}
+
+.dark-mode button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #222;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#theme-toggle:active {
+    transform: rotate(360deg);
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to result box */
+#result {
+    animation: fadeIn 0.5s ease-in-out;
+    min-height: 50px;
+    margin-top: 20px;
+}
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f2937;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.top-bar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Navbar Logo */
+.top-bar nav .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.top-bar nav .logo .icon {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Navbar Menu */
+.top-bar .menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Navbar Links */
+.top-bar nav .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.top-bar nav .menu a:hover {
+    background-color: #2563eb;
+}
+
+/* ===== Services Dropdown ===== */
+.top-bar .dropdown {
+    position: relative;
+}
+
+.top-bar .dropbtn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.top-bar .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Dropdown Links */
+.top-bar .dropdown-content a {
+    color: #1f2937;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* Change Background on Hover */
+.top-bar .dropdown-content a:hover {
+    background-color: black;
+    color: white;  /* Text turns white on hover */
+}
+
+/* Show Dropdown on Hover */
+.top-bar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Make Dropdown Button Color Same as Other Menu Items */
+.top-bar .dropbtn:hover {
+    background-color: #2563eb;
+    border-radius: 5px;
+}

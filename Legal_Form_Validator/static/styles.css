@@ -1,0 +1,202 @@
+/* Light & Dark Mode Colors */
+:root {
+    --background-light: #f5f5f5;
+    --background-dark: #1e1e1e;
+    --text-light: #333;
+    --text-dark: #f5f5f5;
+    --button-light: #007bff;
+    --button-dark: #2196f3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== Navbar (Top Bar) ===== */
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f2937;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.top-bar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Navbar Logo */
+.top-bar nav .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.top-bar nav .logo .icon {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Navbar Menu */
+.top-bar .menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Navbar Links */
+.top-bar nav .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.top-bar nav .menu a:hover {
+    background-color: #2563eb;
+}
+
+/* ===== Services Dropdown ===== */
+.top-bar .dropdown {
+    position: relative;
+}
+
+.top-bar .dropbtn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.top-bar .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Dropdown Links */
+.top-bar .dropdown-content a {
+    color: #1f2937;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* Change Background on Hover */
+.top-bar .dropdown-content a:hover {
+    background-color: black;
+    color: white;  /* Text turns white on hover */
+}
+
+/* Show Dropdown on Hover */
+.top-bar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Make Dropdown Button Color Same as Other Menu Items */
+.top-bar .dropbtn:hover {
+    background-color: #2563eb;
+    border-radius: 5px;
+}
+
+/* ===== Fix Overlapping Issue by Adding Margin to Main Content ===== */
+main {
+    margin-top: 80px; /* Adjust based on navbar height */
+    padding: 20px;
+}
+
+/* ===== Header ===== */
+header {
+    padding: 15px;
+    font-size: 22px;
+    background: var(--button-light);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===== Form Section ===== */
+form {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+/* Input Fields & Button */
+input, select, button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: var(--button-light);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--button-dark);
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Dark Mode Styling ===== */
+.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.dark-mode form {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .submit-btn {
+    background: var(--button-dark);
+}
+
+/* Dark Mode Toggle */
+.dark-mode #dark-mode-toggle {
+    background: var(--button-dark);
+}

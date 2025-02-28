@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal News</title>
+
+    <!-- Link External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Navbar Styles */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            background-color: #1f2937;
+            color: white;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .top-bar nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .top-bar nav .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .top-bar nav .logo .icon {
+            margin-right: 0.5rem;
+        }
+        .top-bar nav .menu {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            align-items: center;
+        }
+        .top-bar nav .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .top-bar nav .menu a:hover {
+            background-color: #2563eb;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown a {
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2d3748;
+            color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #4a5568;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container-box h1 {
+        color: black; /* Set the text color to black */
+    }
+
+        /* Page Background */
+        body {
+            background-color: #dbeafe; /* Light blue background */
+        }
+
+        /* Main Container Styles */
+        .container-box {
+            margin-top: 70px;
+            background-color: white; /* White background for the container */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card */
+        }
+
+        .container-box {
+        margin-top: 70px;
+        background-color: white; /* White background for the container */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card */
+        color: black; /* Set default text color to black */
+    }
+
+    /* Title-specific color (if needed) */
+    .container-box h1 {
+        color: black; /* Explicitly set title text color to black */
+    }
+
+    /* Ensure all links are visible */
+    .container-box a {
+        color: #2563eb; /* Blue color for links */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .container-box a:hover {
+        color: #1e40af; /* Darker blue on hover */
+    }
+
+        /* Input and Button Styling */
+        .input-group input {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-custom {
+            padding: 10px 20px;
+            background-color: #ef4444; /* Red button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #dc2626; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="top-bar">
+        <nav>
+            <a href="#home" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                    <path d="m14 13-7.5 7.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L11 10"/>
+                    <path d="m16 16 6-6"/>
+                    <path d="m8 8 6-6"/>
+                    <path d="m9 7 8 8"/>
+                    <path d="m21 11-8-8"/>
+                </svg>
+                <span>LawGuide</span>
+            </a>
+            <div class="menu">
+                <a href="http://127.0.0.1:5500/New/header.html">Home</a>
+                <a href="#features">Features</a>
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="http://127.0.0.4:5000">Law Cases</a>
+                        <!-- C.A. No.-001579-001579 - 2021 -->
+                        <a href="http://127.0.0.1:5000">Legal Summaries</a>
+                        <a href="http://localhost:5173/">Clause Analysis</a>
+                        <a href="http://127.0.0.2:5000">Regional News</a>
+                        <a href="http://127.0.0.3:5000">Form Filling Assistance</a>
+                        <a href="index.html">Legal Documents</a>
+                        <a href="http://127.0.0.1:7860">Document Comparison</a>
+                    </div>
+                </div>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-box text-center">
+        <h1 class="mb-4">📜 Law & Legal News</h1>
+
+        <!-- Search Form -->
+        <form method="POST" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="region" class="form-control" placeholder="Enter Region (e.g., USA, India)" required>
+                <button type="submit" class="btn btn-custom">Get News</button>
+            </div>
+        </form>
+
+        <!-- Display News if Available -->
+        {% if news %}
+            <h2 class="mt-3">Top News</h2>
+            <div class="mt-3">
+                {% for item in news %}
+                    <a href="{{ item.link }}" class="news-item mb-2" target="_blank">
+                        {{ item.title }}
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Link External JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

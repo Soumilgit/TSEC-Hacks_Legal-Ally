@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Templates</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6; /* Light background */
+            color: #1f2937;
+        }
+
+        /* Navbar Styles */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1f2937; /* Dark background */
+            color: white;
+            padding: 10px 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .top-bar nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .top-bar nav .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .top-bar nav .logo .icon {
+            margin-right: 0.5rem;
+        }
+        .top-bar nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .top-bar nav .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .top-bar nav .menu a:hover {
+            background-color: #2563eb; /* Blue hover effect */
+            color: white;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown .dropbtn:hover {
+            background-color: #2563eb;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            top: calc(100% + 5px);
+            left: 0;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #1e293b;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Floating Toggle Button */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toggle-btn:hover {
+            background-color: #1e40af;
+        }
+
+        .toggle-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 800px;
+            margin: 150px auto; /* Ensure space from the navbar */
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .description h1 {
+            font-size: 2.5rem;
+            color: #1f2937;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .description p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #4b5563;
+            text-align: justify;
+        }
+
+        .card h2 {
+            font-size: 2rem;
+            color: #2563eb;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .card select, .card #downloadBtn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .card #downloadBtn {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card #downloadBtn:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="top-bar">
+        <nav>
+            <a href="#home" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="m14 13-7.5 7.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L11 10"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></svg>
+                <span>LawGuide</span>
+            </a>
+            <div class="menu">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Services</button>
+                    <div class="dropdown-content">
+                        <a href="#consultation">Legal Consultation</a>
+                        <a href="#document">Document Drafting</a>
+                        <a href="#templates">Templates</a>
+                    </div>
+                </div>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Dark/Light Mode Floating Toggle Button -->
+    <div id="toggleMode" class="toggle-btn">
+        <i id="modeIcon" class="fa-solid fa-moon"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Description Section -->
+        <div class="description">
+            <h1>Welcome to Document Templates Portal</h1>
+            <p>
+                This portal provides quick access to various essential document templates such as 
+                <strong>Marriage Certificate</strong>, <strong>Birth Certificate</strong>, <strong>Income Certificate</strong>, 
+                and many more. Select a document type from the dropdown below and download the required template instantly.
+            </p>
+        </div>
+
+        <!-- Main Card Section -->
+        <div class="card">
+            <h2>Access Document Templates</h2>
+            <label for="documentType">Select Document Type:</label>
+            <select id="documentType">
+                <option value="">--Select--</option>
+                <option value="marriage">Marriage Certificate</option>
+                <option value="divorce">Divorce Certificate</option>
+                <option value="birth">Birth Certificate</option>
+                <option value="death">Death Certificate</option>
+                <option value="domicile">Domicile Certificate</option>
+                <option value="caste">Caste Certificate</option>
+                <option value="income">Income Certificate</option>
+                <option value="disability">Disability Certificate</option>
+                <option value="migration">Migration Certificate</option>
+                <option value="trade">Trade License</option>
+            </select>
+            <div id="content" class="hidden">
+                <p id="docDescription"></p>
+                <button id="downloadBtn">Download Template</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

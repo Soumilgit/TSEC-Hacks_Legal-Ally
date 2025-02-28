@@ -1,0 +1,120 @@
+/* Light & Dark Theme Styles */
+:root {
+    --background-light: #BDDDFC;
+    --text-light: #333;
+    --background-dark: #1e1e1e;
+    --text-dark: #f4f4f4;
+    --primary-color: #007BFF;
+    --secondary-color: #0056b3;
+    --button-glow: rgba(0, 123, 255, 0.5);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.container {
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+}
+
+.dark-mode .container {
+    background: linear-gradient(135deg, #2e2e2e, #1a1a1a);
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, select, button {
+    padding: 12px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 10px var(--button-glow);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.07);
+    box-shadow: 0px 6px 15px var(--button-glow);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+.dark-mode .fa-moon {
+    display: none;
+}
+
+.dark-mode .fa-sun {
+    display: inline;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-in;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animated-button {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0px 4px 10px var(--button-glow); }
+    50% { transform: scale(1.05); box-shadow: 0px 6px 15px var(--button-glow); }
+    100% { transform: scale(1); box-shadow: 0px 4px 10px var(--button-glow); }
+}
